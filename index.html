@@ -1,0 +1,256 @@
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap');
+    </style>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Lapidar Incorporadora</title>
+    <link rel="icon" href="imagens/logo-fundo.png" type="image/png">
+  </head>
+  <body>
+
+
+<!-- HEADER -->
+
+<header>
+      <div class="logo">
+        <img src="imagens/logo-fundo.png" alt="logo">
+      </div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+
+  <nav class="nav">
+    <ul class="menu">
+      <li><a href="#sobre">SOBRE</a></li>
+      <li><a href="#projetos">PROJETOS</a></li>
+      <li><a href="https://wa.me/c/5516992240356">AGENDAR VISITA</a></li>
+    </ul>
+  </nav>
+
+
+</header>
+<script src="script.js"></script>
+
+
+<!-- INICIAL -->
+<div class="inicial">
+
+
+  <div class="direita">
+    <img src="imagens/logo-int.png">
+
+    <div class="carrossel-inicial">
+      <button class="prev1">‹</button>
+
+      <div class="lista">
+        <div class="card"><a>A CASA DOS SEUS SONHOS NO CONDOMÍNIO QUE VOCÊ MERECE</a></div>
+        <div class="card"><a>CONSTRUINDO QUALIDADE E EXCLUSIVIDADE</a></div>
+      </div>
+
+      <button class="next1">›</button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+
+<div class="titulo_sobre">
+<h2>SOBRE NÓS</h2>
+</div>
+
+
+
+<div class="conteudo">
+
+<p>
+Na Lapidar Incorporadora, acreditamos que um imóvel é muito mais do que quatro paredes; 
+é o cenário onde sua história ganha vida. Por isso, nossa missão é transformar metros 
+quadrados em experiências extraordinárias, construindo qualidade e exclusividade em cada detalhe.
+Entendemos que você busca o equilíbrio entre a segurança de um condomínio de alto padrão e o conforto 
+de um lar planejado para o seu bem-estar, 
+e é exatamente isso que entregamos em cada projeto.
+</p>
+
+<br>
+
+<p>
+Nosso compromisso vai além da engenharia: nós lapidamos sonhos. Com uma seleção rigorosa de 
+localizações privilegiadas e um padrão construtivo de excelência, garantimos que sua futura 
+residência seja um investimento sólido e um refúgio de tranquilidade. Permita-se viver em um espaço 
+que reflete suas conquistas. Venha para a Lapidar Incorporadora e descubra o 
+privilégio de morar em um projeto feito sob medida para as suas expectativas.
+</p>
+
+</div>
+
+<div class="botao">
+<button>
+  <a href="https://wa.me/c/5516992240356">
+    ENTRE EM CONTATO
+  </a>
+</button>
+</div>
+
+</section>
+
+
+<!-- PROJETOS -->
+<section class="projetos" id="projetos">
+
+<div class="titulo_projeto">
+<h2>CONHEÇA NOSSOS PROJETOS</h2>
+</div>
+
+
+<!-- CARROSSEL -->
+<div class="carrossel">
+
+<button class="prev">&#10094;</button>
+
+<div class="lista_projetos">
+
+<div class="card_projeto">
+<a href="projeto1.html" target="_blank">
+<img src="imagens/esmeralda.png" alt="esmeralda">
+</a>
+</div>
+
+<div class="card_projeto">
+<a href="projeto2.html" target="_blank">
+<img src="imagens/rubi.png" alt="rubi">
+</a>
+</div>
+
+<div class="card_projeto">
+<a href="projeto3.html" target="_blank">
+<img src="imagens/safira.png" alt="safira">
+</a>
+</div>
+
+</div>
+
+<button class="next">&#10095;</button>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<div class="conteudoFooter">
+
+<div class="logoFooter">
+<h3>LAPIDAR</h3>
+<h3>INCORPORADORA</h3>
+</div>
+
+<div class="secoesFooter">
+
+<div class="social">
+
+<ul>
+
+<li>
+<a href="https://www.instagram.com/lapidarincorporadora?igsh=MzlwYWNrdTJ3d2w=">
+<img src="imagens/insta-dourado.svg" alt="Instagram">
+</a>
+</li>
+
+<li>
+<a href="https://wa.me/c/5516992240356">
+<img src="imagens/zap-dourado.svg" alt="WhatsApp">
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- SCRIPT DO CARROSSEL -->
+
+<script>
+
+const lista = document.querySelector(".lista_projetos");
+const cards = document.querySelectorAll(".card_projeto");
+const btnNext = document.querySelector('.next');
+const btnPrev = document.querySelector('.prev');
+
+let index = 0;
+
+function atualizar(){
+  lista.style.transform = `translateX(-${index * 100}%)`;
+}
+
+/* BOTÕES */
+btnNext.onclick = () => {
+  index = (index + 1) % cards.length;
+  atualizar();
+}
+
+btnPrev.onclick = () => {
+  index = (index - 1 + cards.length) % cards.length;
+  atualizar();
+}
+
+/* AUTO PLAY 🔥 */
+setInterval(() => {
+  index = (index + 1) % cards.length;
+  atualizar();
+}, 3000); // troca a cada 3s
+
+</script>
+
+<script>
+(function(){
+
+const lista = document.querySelector('.carrossel-inicial .lista');
+const cards = document.querySelectorAll('.carrossel-inicial .card');
+const btnNext = document.querySelector('.carrossel-inicial .next1');
+const btnPrev = document.querySelector('.carrossel-inicial .prev1');
+
+let index = 0;
+
+function atualizar(){
+  lista.style.transform = `translateX(-${index * 100}%)`;
+}
+
+btnNext.addEventListener('click', () => {
+  index = (index + 1) % cards.length;
+  atualizar();
+});
+
+btnPrev.addEventListener('click', () => {
+  index = (index - 1 + cards.length) % cards.length;
+  atualizar();
+});
+
+/* AUTO PLAY 🔥 */
+setInterval(() => {
+  index = (index + 1) % cards.length;
+  atualizar();
+}, 3000); // muda a cada 3 segundos
+})();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap');
+    </style>
+    <link rel="stylesheet" href="css/project2.css" />
+    <title>Rubi</title>
+    <link rel="icon" href="imagens/logo-fundo.png" type="image/png">
+  </head>
+  <body>
+
+
+<!-- HEADER -->
+
+<header>
+      <div class="logo">
+        <a href="index.html"><img src="imagens/logo-fundo.png" alt="logo"></a>
+      </div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+
+  <nav class="nav">
+    <ul class="menu">
+      <li><a href="index.html">PÁGINA INICIAL</a></li>
+      <li><a href="#sobre">SOBRE O PROJETO</a></li>
+      <li><a href="#imagens">IMAGENS</a></li>
+      <li><a href="https://wa.me/c/5516992240356">AGENDAR VISITA</a></li>
+    </ul>
+  </nav>
+
+</header>
+<script src="script.js"></script>
+
+<!-- INICIAL -->
+<div class="back">
+<section class="inicial">
+<p>RUBI</p>
+</section>
+</div>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+
+<div class="titulo_sobre">
+<h2>PROJETO RUBI</h2>
+</div>
+
+
+
+<div class="conteudo">
+
+<p>
+Localizada na privilegiada Quadra A, a Casa Rubi é uma joia da arquitetura moderna com 162,26 m². 
+O projeto foca na otimização de espaços, oferecendo uma planta inteligente e fluida que atende às exigências de um estilo de vida dinâmico. 
+É a escolha definitiva para quem deseja investir em um patrimônio sólido com o prestígio do selo Damha.
+</p>
+
+<br>
+
+<p>
+Além do acabamento refinado, a residência proporciona a tranquilidade de viver em um loteamento 
+fechado com monitoramento rigoroso. Morar na Casa Rubi significa desfrutar de um ambiente seguro e acolhedor, 
+cercado por áreas verdes e facilidades que garantem o bem-estar diário.
+</p>
+
+
+</div>
+
+</section>
+
+
+<!-- PROJETOS -->
+<section class="projetos" id="imagens">
+
+<div class="titulo_projeto">
+<h2>IMAGENS</h2>
+</div>
+
+
+<!-- CARROSSEL -->
+<div class="carrossel">
+
+<button class="prev">&#10094;</button>
+
+<div class="lista_projetos">
+
+<div class="card_projeto">
+<img src="imagens/Embreve.png" alt="">
+</div>
+
+<div class="card_projeto">
+<img src="imagens/Embreve.png" alt="">
+</div>
+
+<div class="card_projeto">
+<img src="imagens/Embreve.png" alt="">
+</div>
+
+</div>
+
+<button class="next">&#10095;</button>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<div class="conteudoFooter">
+
+<div class="logoFooter">
+<h3>LAPIDAR</h3>
+<h3>INCORPORADORA</h3>
+</div>
+
+<div class="secoesFooter">
+
+<div class="social">
+
+<ul>
+
+<li>
+<a href="https://www.instagram.com/lapidarincorporadora?igsh=MzlwYWNrdTJ3d2w=">
+<img src="imagens/insta-dourado.svg" alt="Instagram">
+</a>
+</li>
+
+<li>
+<a href="https://wa.me/c/5516992240356">
+<img src="imagens/zap-dourado.svg" alt="WhatsApp">
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- SCRIPT DO CARROSSEL -->
+
+<script>
+
+const lista = document.querySelector(".lista_projetos");
+const cards = document.querySelectorAll(".card_projeto");
+
+let index = 0;
+
+document.querySelector(".next").onclick = () => {
+
+index++;
+
+if(index >= cards.length){
+index = 0;
+}
+
+lista.style.transform = `translateX(-${index * 100}%)`;
+
+}
+
+document.querySelector(".prev").onclick = () => {
+
+index--;
+
+if(index < 0){
+index = cards.length - 1;
+}
+
+lista.style.transform = `translateX(-${index * 100}%)`;
+
+}
+
+</script>
+
+</body>
+
+</html>
